@@ -1,7 +1,17 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "needed_funding": 5000
+    "title": "The Dawning of Quantum Supremacy",
+    "content": "After decades of research, quantum computers have achieved a major milestone that puts them ahead of classical supercomputers. By leveraging quantum bits in new ways, researchers have passed the threshold of quantum supremacy - performing calculations impossible for normal binary computers.",
+    "user_id": 1
+  },
+  {
+    "title": "The Asynchronous Magic of Node.js",
+    "content": "By using non-blocking I/O and an event loop, Node.js provides outstanding performance for real-time web applications. Code runs asynchronously, allowing the server to handle thousands of concurrent connections without incurring the overhead of threads.",
+    "user_id": 2
+  },
+  {
+    "title": "The Rise of Smart Dust",
+    "content": "Tiny micro-sensors smaller than a grain of sand are transforming monitoring and surveillance. This ultra-miniature 'smart dust' technology stands to revolutionize everything from weather forecasting to medical implants as sensors shrink to nearly invisible sizes.",
+    "user_id": 3
   }
 ]

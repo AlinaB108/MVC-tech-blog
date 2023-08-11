@@ -1,7 +1,17 @@
 [
   {
-    "name": "",
-    "email": "",
-    "password": ""
+    "name": "coolCat22",
+    "email": "coolcat22@example.com",
+    "password": "p@ssw0rd123"
+  },
+  {
+    "name": "techGuru99",
+    "email": "techguru99@example.com",
+    "password": "securepass456"
+  },
+  {
+    "name": "artsyDreamer",
+    "email": "artsydreamer@example.com",
+    "password": "secret123!"
   }
 ]
