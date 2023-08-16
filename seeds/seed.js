@@ -3,7 +3,8 @@ const { User, Post, Comment } = require('../models');
 
 const userData = require('./userData.json');
 const postData = require('./postData.json');
-const commentData = require('./commentData.json');
+const commentData = require('./commentData.json')
+
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -12,7 +13,7 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-  //Generating random user
+
   for (const post of postData) {
     await Post.create({
       ...post,
@@ -20,7 +21,10 @@ const seedDatabase = async () => {
     });
   }
 
+  const comments = await Comment.bulkCreate(commentData)
+
   process.exit(0);
 };
 
 seedDatabase();
+

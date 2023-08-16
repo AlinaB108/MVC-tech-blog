@@ -1,0 +1,17 @@
+[
+  {
+    "comment": "I wish I could buy a personal quantum computer!",
+    "user_id": 2,
+    "post_id": 1
+  },
+  {
+    "comment": "I love using Node.js!",
+    "user_id": 3,
+    "post_id": 2
+  },
+  {
+    "comment": "That actually sounds very innovative and scary at the same time...",
+    "user_id": 1,
+    "post_id": 3
+  }
+]

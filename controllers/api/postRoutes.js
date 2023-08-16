@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // CREATE a new post
 router.post('/', async (req, res) => {
@@ -19,7 +20,8 @@ router.put('/:id', async (req, res) => {
   try {
     const postData = await Post.update(req.body, {
       where: {
-        id: req.params.id
+        id: req.params.id,
+        user_id: req.session.user_id,
       }
     });
     if (!postData) {
