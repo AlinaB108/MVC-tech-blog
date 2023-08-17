@@ -75,10 +75,10 @@ router.get('/post/:id', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const post = postData.map((post) => post.get({ plain: true }));
 
     res.render('post', {
-      ...posts,
+      ...post,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -118,7 +118,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [
         { 
-          model: Project 
+          model: Post
         }
       ],
     });
