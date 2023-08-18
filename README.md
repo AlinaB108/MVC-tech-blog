@@ -13,7 +13,7 @@
 ## Description
 A CMS-style blog site following the MVC architectural pattern. This site allows users to create their own posts and engage in discussions on other users' content. But only logged-in users will be able to write and reply and also update and delete their posts. If you don't want to create an account you can just simply read other users' posts and comments.
 
-You can find the site here: 
+You can find the site here: [Heroku deployed app](https://mvc-tech-blogab-928389db966f.herokuapp.com/)
 
 ## Table of Contents
 - [Installation](#installation)
