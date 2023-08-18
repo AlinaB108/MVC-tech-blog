@@ -2,6 +2,10 @@ body {
   background-color: #202124;
 }
 
+label {
+  color: white;
+}
+
 .navbar {
   padding: 20px;
 }
@@ -23,11 +27,15 @@ a:hover {
   color: #0e803d; 
 }
 
+a:visited {
+  color: #7BC74D;
+}
+
 h2 a {
   color: #7BC74D;
 }
 
-h4 {
+h2, h3, h4, label {
   color: white;
 }
 
@@ -55,4 +63,26 @@ p {
 .p-comment {
   color: #7BC74D;
   font-size: 20px;
+}
+
+.loginBtn {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.welcome {
+  color: white;
+}
+
+.welcomeName {
+  color: #7BC74D;;
+}
+
+#post-name post-desc {
+  color: white;
+}
+
+.currentPostTitle {
+  color: #7BC74D;
+
 }
