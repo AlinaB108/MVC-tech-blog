@@ -48,3 +48,53 @@ document.addEventListener('DOMContentLoaded', () => {
     postList.addEventListener('click', delButtonHandler);
   }
 });
+
+
+const startUpdateHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/posts/${id}`, {
+      method: 'GET',
+    });
+
+    if (response.ok) {  
+      const updateTitleField = document.querySelector('#update-title');
+      const updateContentField = document.querySelector('#update-content');
+      
+      const updatePost = await response.json();
+      
+      updateTitleField.value = updatePost.title;
+      updateContentField.value = updatePost.content;
+      
+    } else {
+      alert('Failed to start updating post');
+    }
+  }
+};
+
+const updateFormHandler = async (event) => {
+  event.preventDefault();
+
+  const title = document.querySelector('#update-title').value;
+  const content = document.querySelector('#update-content').value;
+  const date_created = new Date().toLocaleDateString();
+  
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/posts/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ title, content, date_created }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert('Failed to update post');
+    }
+  }
+};

@@ -125,7 +125,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('dashboard', {
       ...user,
       logged_in: true
     });
@@ -133,6 +133,31 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Renders the selected post to be updated when the user clicks on the Update button
+router.get('/updatepost', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        }
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const post = postData.get({ plain: true });
+
+    res.render('updatepost', {
+      post,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
