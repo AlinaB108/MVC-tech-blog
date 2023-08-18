@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .querySelector('.new-post-form')
     .addEventListener('submit', newFormHandler);
 
-  // Make sure to add a check for .post-list's existence before adding the event listener
   const postList = document.querySelector('.post-list');
   if (postList) {
     postList.addEventListener('click', delButtonHandler);
@@ -98,3 +97,33 @@ const updateFormHandler = async (event) => {
     }
   }
 };
+
+const showUpdateForm = (postId) => {
+  const updateForm = document.querySelector(`.update-form[data-id="${postId}"]`);
+  
+  if (updateForm) {
+    updateForm.style.display = 'block';
+  }
+};
+
+const hideUpdateForm = (postId) => {
+  const updateForm = document.querySelector(`.update-form[data-id="${postId}"]`);
+  
+  if (updateForm) {
+    updateForm.style.display = 'none';
+  }
+};
+
+document.querySelectorAll('.editPostButton').forEach((button) => {
+  button.addEventListener('click', (event) => {
+    const postId = event.target.getAttribute('data-id');
+    showUpdateForm(postId);
+  });
+});
+
+document.querySelectorAll('.cancelUpdateButton').forEach((button) => {
+  button.addEventListener('click', (event) => {
+    const postId = event.target.getAttribute('data-id');
+    hideUpdateForm(postId);
+  });
+});
